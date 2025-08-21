@@ -1,0 +1,308 @@
+@font-face{
+    font-family: 'coolvetica';
+    src: url('https://www.dafont.com/pt/coolvetica.font');
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/?family=Inter:wght@100..900&display=swap');
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* ------------------------- NAV --------------------*/
+
+
+#menu{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+#menu > img{
+    width: 25vh;
+    height: 15.5vh;
+    float: left;
+}
+
+#menu > a {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    overflow: hidden;
+
+}
+
+#menu > a:hover {
+        border-bottom: 0.3vh solid black;
+      }
+      
+      #menu > a.active {
+        border-bottom: 3px solid black;
+      }
+
+
+/* ----------------------  BARRA DE PESQUISA  ------------------------------ */
+/* Estiliza o contêiner de busca */
+.meu_search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estiliza o ícone da lupa */
+#meu_icon {
+    cursor: pointer;
+    font-size: 2vh; /* Ajuste o tamanho do ícone conforme necessário */
+    font-weight: bold;
+    position: absolute;
+    left: 5vh; /* Posição original do ícone */
+    top: 2vh;
+    z-index: 1;  /* Garante que o ícone fique sobre o input quando este expandir */
+    transition: left 0.4s ease; /* Transição suave para o movimento do ícone */
+}
+
+/* Estiliza o campo de texto (input) */
+.search-input {
+    font-size: 2vh;
+    font-family: 'Inter';
+    padding: 10px 10px 10px 35px; /* Adiciona espaço suficiente para o ícone dentro do input */
+    border: 0.2vh solid white;  /* Cor e espessura da borda */
+    border-radius: 5vh;      /* Bordas arredondadas */
+    width: 0;                /* Começa com largura zero */
+    outline: none;           /* Remove a borda azul padrão ao focar */
+    opacity: 0;              /* Campo invisível inicialmente */
+    transition: width 0.4s ease, opacity 0.4s ease; /* Transição suave para largura e opacidade */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Estilo quando o input está visível */
+.meu_search-container.active .search-input {
+    width: 55vh;            /* Largura total quando ativo */
+    opacity: 1;              /* Faz o campo aparecer */
+    padding: 10px 10px 10px 35px;    /* Mantém o espaço para o ícone dentro do input */
+}
+
+/* Muda a posição do ícone quando a barra de pesquisa é ativada */
+.meu_search-container.active #meu_icon {
+    left: 15px; /* Nova posição do ícone quando a barra é ativada */
+}
+
+/* Estilo quando o input é focado */
+.search-input:focus {
+    border-color: black;       /* Muda a cor da borda ao focar */
+    background-color: white; /* Muda a cor do fundo ao focar */
+}
+
+/*----------------------------BOTÃO PERFIL --------------------*/
+#menu > .perfil-container{
+    padding: 10px 20px;
+    color: rgb(0, 16, 107);
+    font-family: 'Inter';
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+
+
+.meu_container {
+    font-family: 'Inter';
+    background-color: white;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    float: center;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 20px;
+    width: 90vw;
+    max-width: 1000px;
+    margin-left: 30vh;
+    margin-right: 30vh;
+}
+
+.meu-album-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    width: 45%;
+    max-width: 600px;
+}
+
+.album-cover-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.album-cover-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.album-info {
+    padding: 20px;
+}
+
+.album {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.artista {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.faixas-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: 75vh; /* Altura fixa para criar espaço para rolagem */
+    overflow-y: auto; /* Rolagem vertical */
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faixa-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.miniatura {
+    width: 10vw;
+    height: 20vh;
+    border-radius: 5px;
+}
+
+.faixa-detalhes {
+    flex: 1;
+}
+
+audio {
+    width: 100%;
+    margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+    .meu_container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .meu-album-container,
+    .faixas-container {
+        width: 100%;
+    }
+
+    .album {
+        font-size: 1.5em;
+    }
+
+    .artista {
+        font-size: 1em;
+    }
+}
+
+.play-button-container {
+    position: absolute;
+    top: 0.001vh;  /* Posição no canto superior */
+    border-radius: 20%;  /* Bordas arredondadas para combinar com o ícone */
+    padding: 8px;  /* Espaçamento interno ao redor do botão */
+    background-color: transparent;
+}
+
+.play-button {
+    border: none;
+    cursor: pointer;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40vh;  /* Posição no canto direito */
+    background-color: transparent;
+}
+
+.play-button i {
+    font-size: 20px;
+    color: #000000;
+    background-color: transparent;
+}
+
+.play-button-container:hover .play-button {
+    background-color: transparent;
+}
+
+.play-button-container:hover i {
+    color: black;
+}
+
+.preview-unavailable {
+    font-size: 2vh;
+    font-family: 'Inter', sans-serif;
+    color: red;  /* Cor do texto */
+    font-weight: bold;
+    margin-top: 10px; /* Espaçamento superior */
+    text-align: left;
+}
+
+
+
+/*--------------------------------- FOOTER -------------------------------------------------*/
+footer {
+    background-color: black;
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largura máxima */
+    height: 15vh;
+    margin: auto; /* Centraliza o conteúdo */
+    font-family: 'Inter';
+}

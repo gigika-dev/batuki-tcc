@@ -1,0 +1,330 @@
+@media screen and (max-width: 1200px) {
+    .meu_container > .meu_container-login {
+        width: 50vw;
+        height: auto;
+    }
+    .wrap-login {
+        width: 80vw;
+    }
+    .wrap-login > .title {
+        font-size: 4vh;
+        margin: 5vh 5vh;
+    }
+    .input-style > #password, #username, #email {
+        width: 40vw;
+    }
+    .btn-login-meu > .meu_form-btn {
+        width: 25vw;
+    }
+    .meu_btn_conta {
+        margin-left: 18vh;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .meu_container {
+        flex-direction: column;
+        margin-top: 5vh;
+    }
+    .meu_container > .meu_container-login {
+        width: 60vw;
+        height: auto;
+    }
+    .wrap-login {
+        width: 70vw;
+    }
+    .wrap-login > .title {
+        font-size: 3.5vh;
+    }
+    .input-style > #password, #username, #email {
+        width: 50vw;
+    }
+    .btn-login-meu > .meu_form-btn {
+        width: 30vw;
+        height: 7vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .meu_container {
+        padding: 3vh;
+    }
+    .meu_container > .meu_container-login {
+        width: 70vw;
+        height: auto;
+    }
+    .wrap-login {
+        width: 80vw;
+    }
+    .wrap-login > .title {
+        font-size: 3vh;
+        padding: 2vh;
+        margin: 5vh 2vh;
+    }
+    .input-style > #password, #username, #email {
+        width: 60vw;
+    }
+    .btn-login-meu > .meu_form-btn {
+        width: 35vw;
+        height: 6vh;
+    }
+    .meu_btn_conta {
+        margin-left: 10vh;
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .meu_container {
+        margin-top: 2vh;
+        padding: 2vh;
+    }
+    .meu_container > .meu_container-login {
+        width: 80vw;
+        height: auto;
+    }
+    .wrap-login {
+        width: 90vw;
+    }
+    .wrap-login > .title {
+        font-size: 2.5vh;
+        margin: 2vh;
+    }
+    .input-style > #password, #username, #email {
+        width: 70vw;
+        height: 6vh;
+    }
+    .btn-login-meu > .meu_form-btn {
+        width: 40vw;
+        height: 5vh;
+    }
+    .meu_btn_conta {
+        margin-left: 5vh;
+        margin-top: 2vh;
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .meu_container > .meu_container-login {
+        width: 90vw;
+        height: auto;
+    }
+    .wrap-login > .title {
+        font-size: 2vh;
+    }
+    .input-style > #password, #username, #email {
+        width: 80vw;
+    }
+    .btn-login-meu > .meu_form-btn {
+        width: 50vw;
+        height: 5vh;
+    }
+    .meu_btn_conta {
+        width: 80vw;
+        margin-left: 2.5vh;
+    }
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(alfredo2.png);
+}
+
+
+/*
+    Fontes
+*/
+
+@font-face{
+    font-family: coolvetica;
+    src: url ('https://www.dafont.com/pt/coolvetica.font');
+}
+
+
+@font-face {
+    font-family: Inter;
+    src: url('https://fonts.googleapis.com/?family=Inter:wght@100..900&display=swap');
+}
+
+/*
+   Utilitarios
+*/
+
+.login-utils{
+    align-items: center;
+}
+
+.login-utils > .text1 {
+    font-family: 'Inter';
+    font-size: 2vh;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login-utils > .meu_btn {
+    display: flex;
+    align-items: center;
+
+    width: 15vw;
+    height: 5vh;
+    
+    background-color: #0f0908;    
+    border: 0.2vh solid black;
+    border-radius: 10vh;
+    transition: all 0.4s linear;
+    margin-left: 22vh;
+    text-decoration: none;
+}
+
+.login-utils > .meu_btn {
+    font-family: 'Inter';
+    font-size: 2vh;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/*
+ forms geral
+*/
+
+.meu_container {
+    display: flex;
+    float: right;
+    margin-right: 6vh;
+
+    padding: 3vh;
+    border-radius: 5vh;
+    margin-top: 10vh;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25)
+    0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.meu_container > .meu_container-login {
+    width: 40vw;
+    height: 70vh;
+    background-color: transparent;
+}
+
+.wrap-login {
+    width: 90vh;
+    background-color: transparent;
+ }  
+
+ .wrap-login > .title{
+    font-size: 5vh;
+    font-family: 'Inter';
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    text-transform: lowercase;
+    padding: 2vh;
+    padding-bottom: none;
+    text-align: center;
+}
+
+/*
+  forms 
+*/
+
+  .login-form {
+    width: 100%;
+    align-items: right;
+    display: flex;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.input-style {
+    margin: 5vh;
+    align-items: center;
+    position: relative;
+}
+
+.input-style > #password, #username {
+    width: 30vw;
+    height: 7vh;
+    padding: 1.5vh;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 1.5vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    margin-left: 5vh;
+    margin-right: 5vh;
+}
+
+.input-style > input::placeholder {
+    color: rgb(26, 25, 25);
+    font-size: 2vh;
+    font-weight: bold;
+    font-style: none;
+    padding-left: 5vh;
+}
+
+/* MOSTRAR SENHA */
+#password-container > .eyepass {
+    position: absolute;
+    right: 10vh;
+    top: 2.3vh;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black; /* Cor do ícone */
+}
+
+#password-container > .eyepass > i {
+    font-size: 2.3vh; /* Tamanho do ícone */
+}
+
+
+/*
+  Botão*/
+
+
+.btn-login-meu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vh;
+}
+
+.btn-login-meu > .meu_form-btn {
+    font-family: 'Inter';
+    font-size: 2vh;
+    color: black;
+    font-weight: bold;
+
+    background-color: white;
+    border: 0.2vh solid grey;
+    border-radius: 10vh;
+    transition: all 0.4s linear;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+
+    width: 20vw;
+    height: 8vh;
+}
+
+.form-btn:hover,
+.form-btn:focus {
+    background-color: transparent;
+    color: var(--main-color);
+    box-shadow: 4px 4px 1px var(--main-color);
+}

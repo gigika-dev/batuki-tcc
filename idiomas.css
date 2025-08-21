@@ -1,0 +1,269 @@
+@font-face{
+    font-family: 'coolvetica';
+    src: url('https://www.dafont.com/pt/coolvetica.font');
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/?family=Inter:wght@100..900&display=swap');
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* ------------------------- NAV --------------------*/
+
+
+#menu{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+#menu > img{
+    width: 25vh;
+    height: 15.5vh;
+    float: left;
+}
+
+#menu > a {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    overflow: hidden;
+
+}
+
+#menu > a:hover {
+        border-bottom: 0.3vh solid black;
+      }
+      
+      #menu > a.active {
+        border-bottom: 3px solid black;
+      }
+
+
+/* ----------------------  BARRA DE PESQUISA  ------------------------------ */
+/* Estiliza o contêiner de busca */
+.meu_search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estiliza o ícone da lupa */
+#meu_icon {
+    cursor: pointer;
+    font-size: 2vh; /* Ajuste o tamanho do ícone conforme necessário */
+    font-weight: bold;
+    position: absolute;
+    left: 5vh; /* Posição original do ícone */
+    top: 2vh;
+    z-index: 1;  /* Garante que o ícone fique sobre o input quando este expandir */
+    transition: left 0.4s ease; /* Transição suave para o movimento do ícone */
+}
+
+/* Estiliza o campo de texto (input) */
+.search-input {
+    font-size: 2vh;
+    font-family: 'Inter';
+    padding: 10px 10px 10px 35px; /* Adiciona espaço suficiente para o ícone dentro do input */
+    border: 0.2vh solid white;  /* Cor e espessura da borda */
+    border-radius: 5vh;      /* Bordas arredondadas */
+    width: 0;                /* Começa com largura zero */
+    outline: none;           /* Remove a borda azul padrão ao focar */
+    opacity: 0;              /* Campo invisível inicialmente */
+    transition: width 0.4s ease, opacity 0.4s ease; /* Transição suave para largura e opacidade */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Estilo quando o input está visível */
+.meu_search-container.active .search-input {
+    width: 55vh;            /* Largura total quando ativo */
+    opacity: 1;              /* Faz o campo aparecer */
+    padding: 10px 10px 10px 35px;    /* Mantém o espaço para o ícone dentro do input */
+}
+
+/* Muda a posição do ícone quando a barra de pesquisa é ativada */
+.meu_search-container.active #meu_icon {
+    left: 15px; /* Nova posição do ícone quando a barra é ativada */
+}
+
+/* Estilo quando o input é focado */
+.search-input:focus {
+    border-color: black;       /* Muda a cor da borda ao focar */
+    background-color: white; /* Muda a cor do fundo ao focar */
+}
+
+/*----------------------------BOTÃO PERFIL --------------------*/
+#menu > .perfil-container{
+    padding: 10px 20px;
+    color: rgb(255, 0, 0);
+    font-family: 'Inter';
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/* Estilos gerais para o container */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os rankings */
+    padding: 20px;
+}
+
+/* Estilos para cada ranking */
+.ranking {
+    background-color: white; /* Cor vibrante (pode ajustar para cada ranking) */
+    padding: 5vh;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.ranking h2 {
+    color: black; /* Cor do título */
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    text-align: start;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+/* Estilos do carrossel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px; /* Espaçamento entre as imagens */
+    overflow-x: auto;
+}
+
+/* Define que cada item do carrossel é flexível */
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    min-width: 150px; /* Ajuste conforme necessário */
+    max-width: 150px; /* Ajuste conforme necessário */
+    position: relative;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem no Chrome, Safari e Opera */
+}
+
+/* Contém a imagem do álbum, as informações da faixa e o botão de reprodução juntos */
+.track-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.album-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.track-info {
+    padding: 0.5rem;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.track-text {
+    font-size: 14px;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+
+/* Estilo do botão de play */
+.play-button-container {
+    margin-top: 5px;
+}
+
+/* Alinhamento do botão de play com o ícone */
+.play-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+}
+
+.play-button i {
+    pointer-events: none;
+}
+
+
+.preview-unavailable {
+    color: red;
+    font-size: 14px;
+    margin-top: 0.5rem;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.carousel-prev {
+    left: -30px; /* Posiciona a seta fora do container */
+}
+
+.carousel-next {
+    right: -30px; /* Posiciona a seta fora do container */
+}
+
+/*--------------------------------- FOOTER -------------------------------------------------*/
+footer {
+    background-color: #000000; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largura máxima */
+    margin: auto; /* Centraliza o conteúdo */
+    font-family: 'Inter';
+}

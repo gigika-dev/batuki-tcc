@@ -1,0 +1,459 @@
+@font-face{
+    font-family: 'coolvetica';
+    src: url('https://www.dafont.com/pt/coolvetica.font');
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/?family=Inter:wght@100..900&display=swap');
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+body{
+    background-image: url(fundo.png);
+    background-size: 96.5%;
+    background-position: static;
+    background-repeat: no-repeat;
+}
+
+/* ------------------------- NAV --------------------*/
+
+
+#menu{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+#menu > img{
+    width: 25vh;
+    height: 15.5vh;
+    float: left;
+}
+
+#menu > a {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    overflow: hidden;
+
+}
+
+#menu > a:hover {
+        border-bottom: 0.3vh solid black;
+      }
+      
+      #menu > a.active {
+        border-bottom: 3px solid black;
+      }
+
+
+/* ----------------------  BARRA DE PESQUISA  ------------------------------ */
+/* Estiliza o contêiner de busca */
+.meu_search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estiliza o ícone da lupa */
+#meu_icon {
+    cursor: pointer;
+    font-size: 2vh; /* Ajuste o tamanho do ícone conforme necessário */
+    font-weight: bold;
+    position: absolute;
+    left: 5vh; /* Posição original do ícone */
+    top: 2vh;
+    z-index: 1;  /* Garante que o ícone fique sobre o input quando este expandir */
+    transition: left 0.4s ease; /* Transição suave para o movimento do ícone */
+}
+
+/* Estiliza o campo de texto (input) */
+.search-input {
+    font-size: 2vh;
+    font-family: 'Inter';
+    padding: 10px 10px 10px 35px; /* Adiciona espaço suficiente para o ícone dentro do input */
+    border: 0.2vh solid white;  /* Cor e espessura da borda */
+    border-radius: 5vh;      /* Bordas arredondadas */
+    width: 0;                /* Começa com largura zero */
+    outline: none;           /* Remove a borda azul padrão ao focar */
+    opacity: 0;              /* Campo invisível inicialmente */
+    transition: width 0.4s ease, opacity 0.4s ease; /* Transição suave para largura e opacidade */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Estilo quando o input está visível */
+.meu_search-container.active .search-input {
+    width: 55vh;            /* Largura total quando ativo */
+    opacity: 1;              /* Faz o campo aparecer */
+    padding: 10px 10px 10px 35px;    /* Mantém o espaço para o ícone dentro do input */
+}
+
+/* Muda a posição do ícone quando a barra de pesquisa é ativada */
+.meu_search-container.active #meu_icon {
+    left: 15px; /* Nova posição do ícone quando a barra é ativada */
+}
+
+/* Estilo quando o input é focado */
+.search-input:focus {
+    border-color: black;       /* Muda a cor da borda ao focar */
+    background-color: white; /* Muda a cor do fundo ao focar */
+}
+
+/*----------------------------BOTÃO PERFIL --------------------*/
+#menu > .perfil-container{
+    padding: 10px 20px;
+    color: rgb(0, 16, 107);
+    font-family: 'Inter';
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* ------------------------- CARDS- IDIOMA - CARROSSEL--------------------*/
+
+#card{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a > button{
+    font-size: 2vh;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+}
+
+#card{
+  max-width: 100%;
+  padding: 0 5%;
+  margin: 0 auto;
+
+  border-radius: 5.9vh;
+  padding: 2vh;
+  width: 20vh;
+  height: 18vh;
+  margin-left: 10vh;
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  align-items: center;
+  margin-left: 3vh;
+  margin-right: 3vh;
+
+  font-family: 'Inter';
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 3vh;
+}
+
+.card1{
+    background-color: #94D2BD;
+    box-shadow: rgb(148, 210, 189, 1) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card2{
+    background-color: #EE9B00;
+    box-shadow: rgb(238, 155, 0, 1)0px 50px 100px -20px,
+    rgb(238, 155, 0, 1)0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card3{
+    background-color: #AE2012;
+    box-shadow: rgb(174, 32, 18, 1) 0px 50px 100px -20px,
+    rgb(174, 32, 18, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card4{
+    background-color: #8338EC;
+    box-shadow: rgb(131, 56, 236, 1) 0px 50px 100px -20px,
+    rgb(131, 56, 236, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card5{
+    background-color: #457B9D;
+    box-shadow: rgb(69, 123, 157, 1) 0px 50px 100px -20px,
+    rgb(69, 123, 157, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+.card6{
+    background-color: #CA6702;
+    box-shadow: rgb(202, 103, 2, 1) 0px 50px 100px -20px,
+    rgb(202, 103, 2, 1)0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/*------------------ CARDS - IDIOMAS ------------*/
+
+table{
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card7{
+    background-color: #AE2012;
+    box-shadow: rgb(174, 32, 18, 1) 0px 50px 100px -20px,
+    rgb(174, 32, 18, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card8{
+    background-color: #949AD2;
+    box-shadow: rgb(148, 154, 210, 1) 0px 50px 100px -20px,
+    rgb(148, 154, 210, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+
+.card9{
+    background-color: #0099AF;
+    box-shadow: rgb(0, 153, 175, 1) 0px 50px 100px -20px,
+    rgb(0, 153, 175, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .card10{
+      background-color: #CA6702;
+      box-shadow: rgb(202, 103, 2, 1) 0px 50px 100px -20px,
+      rgb(202, 103, 2, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .card11{
+      background-color: #AE2012;
+      box-shadow: rgb(174, 32, 18, 1) 0px 50px 100px -20px,
+      rgb(174, 32, 18, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .card12{
+      background-color: #8338EC;
+      box-shadow: rgb(131, 56, 236, 1) 0px 50px 100px -20px,
+      rgb(131, 56, 236, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .card13{
+      background-color: #EE9B00;
+      box-shadow: rgb(238, 155, 0, 1) 0px 50px 100px -20px,
+      rgb(238, 155, 0, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  
+  .card14{
+      background-color: #CA6702;
+      box-shadow: rgb(202, 103, 2, 1) 0px 50px 100px -20px,
+      rgb(202, 103, 2, 1)0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  
+  .card15{
+      background-color: #EE0000;
+      box-shadow: rgb(238, 0, 0, 1) 0px 50px 100px -20px,
+      rgb(238, 0, 0, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  
+  .card16{
+    background-color: #080763;
+    box-shadow: rgb(8, 7, 99, 1) 0px 50px 100px -20px,
+    rgb(8, 7, 99, 1) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+
+  .card17{
+      background-color: #7CAD9C;
+      box-shadow: rgb(148, 210, 189, 1) 0px 50px 100px -20px,
+      rgb(124, 173, 156, 1) 0px 30px 60px -30px,rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+
+  .card18{
+        background-color: #03A200;
+        box-shadow: rgba(3, 162, 0, 1) 0px 50px 100px -20px,
+        rgba(3, 162, 0, 1)0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;}
+
+
+
+        /* --------------------- CARROSSEL --------------------*/
+          
+
+button{
+    border: none;
+}
+
+.carousel {
+    width: 80.5%; /* Largura do carrossel */
+    margin: 0 auto; /* Centraliza o carrossel na página */
+    overflow: hidden; /* Esconde conteúdo além da largura definida */
+    position: relative;
+    background-color: transparent;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+    max-width: 100%;
+    }
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; /* Adiciona transição suave ao mover os cards */
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    border: none;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.carousel-prev {
+    left: -1rem;
+}
+
+.carousel-next {
+    right: -1rem;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: transparent;
+}
+
+.card-item {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+/* ------------------------- ranking --------------------*/
+
+/* Contêiner principal */
+.ranking-container {
+    display: flex;
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    background: transparent;
+    border-radius: 10vh;
+    padding: 3vh;
+    width: 60vw;
+    height: auto; /* Ajusta a altura automaticamente para acomodar todos os itens */
+    margin-top: 2vh;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(26, 14, 196, 0.9) 0px 0px 0px 1px;
+}
+
+/* Estilo do título */
+h1 {
+    padding: 5vh;
+    text-align: left;
+    margin: 1vh; /* Ajustado para espaçar corretamente */
+    font-size: 2em; /* Ajustado para uma fonte mais legível */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contêiner de lista de músicas */
+.song {
+    padding: 2vh;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    flex-direction: row; /* Coloca os itens em uma linha */
+    justify-content: space-between; /* Distribui os itens de forma uniforme */
+    gap: 5vh; /* Espaçamento entre os itens */
+    background-color: #ffffff;
+    border-radius: 3vh;
+    margin-bottom: 1.5vh;
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* Item de música */
+.song-info {
+    display: flex;
+    width: 80%; /* Ajusta a largura dos itens */
+    max-width: 600px; /* Limita a largura máxima dos itens */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    height: auto; /* Altura automática para acomodar o conteúdo */
+    overflow: hidden; /* Esconde conteúdo além da largura definida */
+    color: white;
+    gap: 5vh; /* Ajustado para um espaço mais uniforme */
+}
+
+/* Nome da música */
+.song-info > .musica {
+    font-weight: bold;
+    font-size: 2vh; /* Ajustado para uma leitura melhor */
+    color: black;
+    text-align: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Nome do artista */
+.song-info > .artista {
+    color: white;
+    font-size: 14px;
+    color: #666;
+    text-align: center; /* Centraliza os itens horizontalmente */
+    }
+
+p{
+    color: red;
+    font-size: 2vh;
+    font-weight: bold;
+}
+/* Estilos para o player de áudio (ícone de play/pause) */
+.audio-player {
+    cursor: pointer;
+    text-align: center; /* Centraliza os itens horizontalmente */
+}
+
+.play-icon {
+    color: black; /* Cor do ícone de play */
+    font-size: 24px;
+    text-align: center; /* Centraliza os itens horizontalmente */
+
+}
+
+.pause-icon {
+    color: black; /* Cor do ícone de pause */
+    font-size: 24px;
+    text-align: center; /* Centraliza os itens horizontalmente */
+
+}
+
+
+/*--------------------------------- FOOTER -------------------------------------------------*/
+footer {
+    background-color: #000000; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largura máxima */
+    margin: auto; /* Centraliza o conteúdo */
+    font-family: 'Inter';
+}

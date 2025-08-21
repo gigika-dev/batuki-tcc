@@ -1,0 +1,166 @@
+body{
+  background-image: url(perfil-fundo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100%;
+}
+
+.meu_container_img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  float: right;
+  flex-wrap: wrap;
+
+  padding: 3vh;
+  border-radius: 5vh;
+  margin: 10vh auto; /* Centraliza verticalmente e entre containers */
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25)
+  0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  background-color: white;
+  text-align: center; /* Centraliza o texto */
+  margin-top: 10vh;
+  margin-right: 10vh;
+
+}
+
+.meu_container_img {
+  margin-top: 0; /* Remove espaço adicional se necessário */
+}
+
+.meu_container {
+  margin-top: 2vh;
+}
+
+.title {
+  text-align: center;
+  color: #000000;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Inter';
+  font-weight: bold;
+}
+
+.avatar,
+.header-img {
+  max-width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #000000;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  text-align: center;
+}
+
+.header-img {
+  border-radius: 10px;
+}
+
+/* Input Style */
+.input-style {
+  margin: 2vh;
+  align-items: center;
+  position: relative;
+}
+
+.input-style > input {
+  width: 30vw;
+  height: 7vh;
+  padding: 1vh;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 1.5vh;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  font-weight: bold;
+}
+
+/* Botão de Salvar */
+.save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background-color: #0815a9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+  transition: all 0.3s ease;
+  float: center;
+}
+
+.save-button:hover {
+  background-color: #062031;
+  transform: scale(1.05);
+}
+
+/* Botões adicionais */
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 5px;
+  transition: all 0.3s ease;
+}
+
+button i {
+  margin: 0;
+}
+
+button:hover {
+  background-color: #1a45bc;
+  transform: translateY(-3px);
+}
+
+/* Esconde o input de upload real */
+input[type="file"] {
+  display: none;
+}
+
+/* Estilo do label que age como botão */
+.custom-file-label {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #3498db;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 5px auto;
+}
+
+/* Animação ao passar o mouse */
+.custom-file-label:hover {
+  background-color: #05012c;
+  transform: scale(1.05);
+}
+
+
+/* Quando a imagem for selecionada */
+.custom-file-label.selected {
+  background-color: #00257b; /* Verde para indicar sucesso */
+  color: #fff;
+  transform: scale(1.05); /* Destaque visual */
+  transition: all 0.3s ease;
+}
+

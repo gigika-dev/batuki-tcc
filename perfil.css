@@ -1,0 +1,275 @@
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* Fonte personalizada */
+@font-face {
+  font-family: coolvetica;
+  src: url('https://www.dafont.com/pt/coolvetica.font');
+}
+
+@font-face {
+  font-family: Inter;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+}
+
+body{
+  background-image: url(fundo-perfil.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+#menu{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  max-width: 100%;
+  padding: 0 5%;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+#menu > img{
+  width: 25vh;
+  height: 15.5vh;
+  float: left;
+}
+
+#menu > a {
+  text-align: center;
+  font-family: 'Inter';
+  font-size: 2vh;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+  overflow: hidden;
+
+}
+
+#menu > a:hover {
+      border-bottom: 0.3vh solid black;
+    }
+    
+    #menu > a.active {
+      border-bottom: 3px solid black;
+    }
+
+
+/* ----------------------  BARRA DE PESQUISA  ------------------------------ */
+/* Estiliza o contêiner de busca */
+.meu_search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Estiliza o ícone da lupa */
+#meu_icon {
+  cursor: pointer;
+  font-size: 2vh; /* Ajuste o tamanho do ícone conforme necessário */
+  font-weight: bold;
+  position: absolute;
+  left: 5vh; /* Posição original do ícone */
+  top: 2vh;
+  z-index: 1;  /* Garante que o ícone fique sobre o input quando este expandir */
+  transition: left 0.4s ease; /* Transição suave para o movimento do ícone */
+}
+
+/* Estiliza o campo de texto (input) */
+.search-input {
+  font-size: 2vh;
+  font-family: 'Inter';
+  padding: 10px 10px 10px 35px; /* Adiciona espaço suficiente para o ícone dentro do input */
+  border: 0.2vh solid white;  /* Cor e espessura da borda */
+  border-radius: 5vh;      /* Bordas arredondadas */
+  width: 0;                /* Começa com largura zero */
+  outline: none;           /* Remove a borda azul padrão ao focar */
+  opacity: 0;              /* Campo invisível inicialmente */
+  transition: width 0.4s ease, opacity 0.4s ease; /* Transição suave para largura e opacidade */
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Estilo quando o input está visível */
+.meu_search-container.active .search-input {
+  width: 55vh;            /* Largura total quando ativo */
+  opacity: 1;              /* Faz o campo aparecer */
+  padding: 10px 10px 10px 35px;    /* Mantém o espaço para o ícone dentro do input */
+}
+
+/* Muda a posição do ícone quando a barra de pesquisa é ativada */
+.meu_search-container.active #meu_icon {
+  left: 15px; /* Nova posição do ícone quando a barra é ativada */
+}
+
+/* Estilo quando o input é focado */
+.search-input:focus {
+  border-color: black;       /* Muda a cor da borda ao focar */
+  background-color: white; /* Muda a cor do fundo ao focar */
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+/* Container principal */
+.meu_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh;
+  border-radius: 5vh;
+  margin-top: 5vh;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+  rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  width: 60%;
+  background-color: white;
+}
+
+/* Header */
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 30vh; /* Metade da metade da tela */
+  background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+.header-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajuste para o avatar no header */
+.avatar-container {
+  position: absolute;
+  bottom: -10px; /* Define o quanto ele fica sobreposto ao header */
+  left: 20px; /* Define a posição no canto inferior esquerdo */
+  width: 120px; /* Ajusta o tamanho do avatar */
+  height: 120px;
+  border-radius: 10vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona um leve sombreamento */
+}
+
+.avatar-img {
+  width: 100px; /* Tamanho interno da imagem */
+  height: 100px;
+  object-fit: cover; /* Garante que a imagem preencha o container */
+  border-radius: 50%; /* Mantém a imagem redonda */
+}
+
+
+/* Informações do usuário */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinhado ao início */
+  margin-top: 2vh; /* Espaço ajustado para o avatar */
+  padding: 1vh;
+  width: 100%;
+  background-color: white;
+}
+
+.info-container .nome{
+  display: flex;
+  flex-direction: column;
+  font-size: 4vh;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  text-transform: lowercase;
+  margin-bottom: 0;
+  font-family: 'Inter';
+  margin-left: 5vh;
+}
+
+.info-container .user{
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  text-transform: lowercase;
+  margin-bottom: 0;
+  font-family: 'Inter';
+  margin-left: 5vh;
+}
+
+.info-container .bio {
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+  text-transform: lowercase;
+  margin-bottom: 0;
+  font-family: 'Inter';
+  margin-left: 5vh;
+}
+
+/* Botão de edição */
+.edit-button {
+  position: absolute; /* Faz o botão ser posicionado relativamente ao .header-container */
+  top: 1vh; /* Define a distância do topo do .header-container */
+  right: 1vh; /* Define a distância da borda direita */
+  z-index: 10; /* Garante que o botão fique acima dos outros elementos */
+  padding: 1vh;
+  background-color: black;
+  color: #fff;
+  font-family: 'Inter';
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2vh;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25)
+  0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #444444;
+}
+
+/* Botão de logout */
+.logout-btn {
+  position: absolute; /* Faz o botão ser posicionado relativamente ao .header-container */
+  top: 1vh; /* Define a distância do topo do .header-container */
+  right: 1vh; /* Define a distância da borda direita */
+  z-index: 10; /* Garante que o botão fique acima dos outros elementos */
+  padding: 1vh;
+  background-color: black;
+  color: #fff;
+  font-family: 'Inter';
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 2vh;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25)
+  0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.logout-btn:hover {
+  background-color: #ffffff;
+}

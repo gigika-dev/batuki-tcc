@@ -1,0 +1,239 @@
+@font-face{
+    font-family: 'coolvetica';
+    src: url('https://www.dafont.com/pt/coolvetica.font');
+}
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.googleapis.com/?family=Inter:wght@100..900&display=swap');
+}
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* ------------------------- NAV --------------------*/
+
+
+#menu{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+#menu > img{
+    width: 25vh;
+    height: 15.5vh;
+    float: left;
+}
+
+#menu > a {
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 2vh;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    overflow: hidden;
+
+}
+
+#menu > a:hover {
+        border-bottom: 0.3vh solid black;
+      }
+      
+      #menu > a.active {
+        border-bottom: 3px solid black;
+      }
+
+
+/* ----------------------  BARRA DE PESQUISA  ------------------------------ */
+/* Estiliza o contêiner de busca */
+.meu_search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estiliza o ícone da lupa */
+#meu_icon {
+    cursor: pointer;
+    font-size: 2vh; /* Ajuste o tamanho do ícone conforme necessário */
+    font-weight: bold;
+    position: absolute;
+    left: 5vh; /* Posição original do ícone */
+    top: 2vh;
+    z-index: 1;  /* Garante que o ícone fique sobre o input quando este expandir */
+    transition: left 0.4s ease; /* Transição suave para o movimento do ícone */
+}
+
+/* Estiliza o campo de texto (input) */
+.search-input {
+    font-size: 2vh;
+    font-family: 'Inter';
+    padding: 10px 10px 10px 35px; /* Adiciona espaço suficiente para o ícone dentro do input */
+    border: 0.2vh solid white;  /* Cor e espessura da borda */
+    border-radius: 5vh;      /* Bordas arredondadas */
+    width: 0;                /* Começa com largura zero */
+    outline: none;           /* Remove a borda azul padrão ao focar */
+    opacity: 0;              /* Campo invisível inicialmente */
+    transition: width 0.4s ease, opacity 0.4s ease; /* Transição suave para largura e opacidade */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* Estilo quando o input está visível */
+.meu_search-container.active .search-input {
+    width: 55vh;            /* Largura total quando ativo */
+    opacity: 1;              /* Faz o campo aparecer */
+    padding: 10px 10px 10px 35px;    /* Mantém o espaço para o ícone dentro do input */
+}
+
+/* Muda a posição do ícone quando a barra de pesquisa é ativada */
+.meu_search-container.active #meu_icon {
+    left: 15px; /* Nova posição do ícone quando a barra é ativada */
+}
+
+/* Estilo quando o input é focado */
+.search-input:focus {
+    border-color: black;       /* Muda a cor da borda ao focar */
+    background-color: white; /* Muda a cor do fundo ao focar */
+}
+
+/*----------------------------BOTÃO PERFIL --------------------*/
+#menu > .perfil-container{
+    padding: 10px 20px;
+    color: rgb(255, 0, 0);
+    font-family: 'Inter';
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+
+/* ---------------- CONTAINER ALBUM ---------------------------------------------- */
+
+h2 {
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+/* Define o estilo geral para o container principal */
+.meu_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para cada ranking */
+.ranking {
+    margin-bottom: 30px; /* Espaço entre rankings diferentes */
+}
+
+/* Container flexível para as faixas de música */
+.track-list {
+    display: flex; /* Define o layout em linha (flexível) */
+    flex-wrap: wrap; /* Permite que as faixas quebrem para a próxima linha se não couberem */
+    gap: 20px; /* Espaçamento entre cada faixa */
+    text-align: start;
+}
+
+/* Estilo para cada item de faixa */
+.track-item {
+    width: 200px; /* Define uma largura fixa para cada item */
+    text-align: center; /* Centraliza o conteúdo de cada item */
+    position: relative; /* Permite o posicionamento absoluto dos elementos filhos */
+    margin-bottom: 20px; /* Espaçamento entre as faixas */
+    text-align: start;
+}
+
+/* Estilo para a capa do álbum */
+.album-cover {
+    width: 100%; /* A imagem ocupa toda a largura do container da faixa */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilo para as informações da faixa (nome, artista, etc.) */
+.track-info {
+    margin-top: 10px; /* Adiciona espaço entre a capa do álbum e as informações da faixa */
+    text-align: start;
+}
+
+.music-artista{
+    font-family: 'Inter';
+    text-align: start;
+}
+
+p{
+    color: red;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+
+.audio-player {
+    position: absolute; /* Posiciona o player absolutamente em relação ao .track-item */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza completamente o elemento */
+    background: #ffffff; /* Fundo semi-transparente para melhor visibilidade */
+    border-radius: 25%; /* Deixa o fundo arredondado */
+    padding: 1vh; /* Espaçamento interno */
+    display: flex; /* Para centralizar o ícone */
+    justify-content: right; /* Alinha horizontalmente */
+    align-items: right; /* Alinha verticalmente */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o player */
+    /*margin-left: 10vh;*/
+    margin-left: 13vh;
+}
+
+.play-icon {
+    color: black; /* Cor do ícone de play */
+    font-size: 24px;
+    text-align: right; /* Centraliza os itens horizontalmente */
+
+}
+
+.pause-icon {
+    color: black; /* Cor do ícone de pause */
+    font-size: 24px;
+    text-align: right; /* Centraliza os itens horizontalmente */
+
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Exibir um item por vez em dispositivos móveis */
+    }
+}
+
+/*--------------------------------- FOOTER -------------------------------------------------*/
+footer {
+    background-color: #000000; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+}
+
+.footer-content {
+    max-width: 1200px; /* Largura máxima */
+    margin: auto; /* Centraliza o conteúdo */
+    font-family: 'Inter';
+}
